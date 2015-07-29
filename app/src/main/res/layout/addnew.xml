@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:visibility="gone"
+        android:background="@color/add_new_place_primary"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/txtNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nama_resto"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"/>
+
+            <EditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNama"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="13dp"
+                android:inputType="text"
+                android:hint="@string/hint_nama_resto"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alamat"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:layout_below="@+id/line5"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_marginTop="5dp"/>
+
+            <EditText
+                android:id="@+id/etAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAlamat"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="13dp"
+                android:inputType="text"
+                android:hint="@string/hint_alamat"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtKategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/kategori"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:layout_below="@+id/line4"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_marginTop="5dp"/>
+
+            <EditText
+                android:id="@+id/etKategori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtKategori"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="13dp"
+                android:inputType="text"
+                android:hint="@string/hint_kategori"
+                android:textColor="@color/black" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/linAmbilGambar"
+                android:background="@color/line"/>
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/linLocation"
+                android:background="@color/line"/>
+            <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/etKategori"
+                android:background="@color/line"/>
+            <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/etAlamat"
+                android:background="@color/line"/>
+            <View
+                android:id="@+id/line5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/etNama"
+                android:background="@color/line"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/simpan"
+                android:background="@color/btnsimpan"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@+id/line1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/curLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_you_are_at"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/line3"/>
+
+            <LinearLayout
+                android:id="@+id/linLocation"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_below="@+id/curLocation">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="17dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/blacktint75"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnShowLocation"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_my_location_grey600_48dp"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/cd"/>
+
+                    <TextView
+                        android:id="@+id/txtGetLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/get_location"
+                        android:textSize="12sp"
+                        android:textColor="@color/blacktint75"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtAmbilFoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ambil_foto"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/line2"/>
+
+            <LinearLayout
+                android:id="@+id/linAmbilGambar"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/txtAmbilFoto"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- To display picture taken -->
+                    <ImageView
+                        android:id="@+id/imgPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:src="@drawable/ic_photo_grey600_36dp"
+                        android:contentDescription="@string/preview"/>
+
+                    <!-- To preview video recorded -->
+                    <VideoView
+                        android:id="@+id/videoPreview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="400dp"
+                        android:visibility="gone"
+                        android:contentDescription="@string/video_preview" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="end|center_vertical"
+                    android:orientation="vertical" >
+
+                    <!-- Capture picture button -->
+                    <Button
+                        android:id="@+id/btnCapturePicture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/add_new_place_accent"
+                        android:text="@string/take_picture"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingLeft="10dp"/>
+
+                    <!-- Record video button -->
+                    <Button
+                        android:id="@+id/btnRecordVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textRecordVideo"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="AfterLoginLay" parent="AppTheme">
+    <!-- Customize your theme here. -->
+    </style>
+
+     <style name="LoginLay" parent="AppTheme">
+    <!-- Customize your theme here. -->
+    </style>
+
+     <style name="RegisterLay" parent="AppTheme">
+    <!-- Customize your theme here. -->
+    </style>
+
+     <style name="RuteLay" parent="AppTheme">
+    <!-- Customize your theme here. -->
+    </style>
+
+     <style name="AddNewPlaceLay" parent="AppTheme">
+    <!-- Customize your theme here. -->
+    </style>
+
+     <style name="DetailResLay" parent="AppTheme">
+    <!-- Customize your theme here. -->
+    </style>
+
+     <style name="HomeScreenLay" parent="AppTheme">
+    <!-- Customize your theme here. -->
+    </style>
+
+     <style name="ResLay" parent="AppTheme">
+         <item name="android:actionBarItemBackground">@drawable/btn_save</item>
+         <item name="actionBarItemBackground">@drawable/btn_save</item>
+    </style>
+
+
+</resources>

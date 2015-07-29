@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rel9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/gambarRes"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="10dp"
+                    android:scaleType="centerCrop" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/expanded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Nama Restaurant"
+                android:background="@color/blacktint75"
+                android:textColor="@color/white"
+                android:id="@+id/txtTitle"
+                android:gravity="center_vertical"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                android:textAllCaps="true"
+                android:id="@+id/txtTitleAlamat"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/rel9"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat Restaurant"
+                android:id="@+id/txtValueAlamat"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/txtTitleAlamat"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open at"
+                android:id="@+id/txtTitleOpenHour"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/txtValueAlamat"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9AM - 9PM"
+                android:id="@+id/txtValueOpenHour"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/txtTitleOpenHour"
+                android:layout_marginBottom="10dp" />
+
+            <TableLayout
+                android:id="@+id/tblLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:layout_below="@+id/txtValueOpenHour"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp">
+
+                <TableRow>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageButton"
+                        android:src="@drawable/phone192new"
+                        android:background="@null"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnDirection"
+                        android:src="@drawable/direction192new"
+                        android:background="@null"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnRate"
+                        android:src="@drawable/rate192new"
+                        android:background="@null"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnReview"
+                        android:src="@drawable/menu192new"
+                        android:background="@null"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnShare"
+                        android:src="@drawable/share192new"
+                        android:background="@null"
+                        android:onClick="actionShare"/>
+
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:id="@+id/txtPhone"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Direction"
+                        android:id="@+id/txtRute"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nilai"
+                        android:id="@+id/txtNilai"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Menu"
+                        android:id="@+id/txtReview2"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Share"
+                        android:id="@+id/txtShare2"
+                        android:gravity="center"/>
+
+                </TableRow>
+
+            </TableLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tblLayout" >
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

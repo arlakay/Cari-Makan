@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="ResLay" parent="AppTheme">
+        <item name="android:colorPrimary">@color/restaurant_primary</item>
+        <item name="android:colorPrimaryDark">@color/restaurant_primary_dark</item>
+        <item name="colorAccent">@color/restaurant_accent</item>
+        <item name="android:textColor">@color/restaurant_secondary_text</item>
+        <item name="android:textColorPrimary">@color/restaurant_primary_text</item>
+        <item name="android:textColorSecondary">@color/restaurant_primary_text</item>
+
+    </style>
+    <style name="LoginLay" parent="AppTheme">
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="android:colorPrimaryDark">@color/login_primary_dark</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/login_accent</item>
+    </style>
+
+    <style name="AfterLoginLay" parent="AppTheme">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="RegisterLay" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimaryDark">@color/register_primary_dark</item>
+        <item name="colorAccent">@color/register_accent</item>
+        <item name="android:textColorPrimary">@color/register_primary_text</item>
+        <item name="android:textColorSecondary">@color/register_primary_text</item>
+    </style>
+
+    <style name="RuteLay" parent="AppTheme">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AddNewPlaceLay" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/add_new_place_primary</item>
+        <item name="android:colorPrimaryDark">@color/add_new_place_primary_dark</item>
+        <item name="colorAccent">@color/add_new_place_accent</item>
+        <item name="android:textColorPrimary">@color/add_new_place_primary_text</item>
+
+        <item name="android:actionBarItemBackground">@drawable/btn_save</item>
+        <item name="actionBarItemBackground">@drawable/btn_save</item>
+
+    </style>
+
+    <style name="DetailResLay" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/detailrestaurant_primary</item>
+        <item name="android:colorPrimaryDark">@color/detailrestaurant_primary_dark</item>
+
+        <item name="android:textColor">@color/restaurant_secondary_text</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+    </style>
+
+    <style name="HomeScreenLay" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/homescreen_primary</item>
+        <item name="android:colorPrimaryDark">@color/homescreen_primary_dark</item>
+    </style>
+
+    <style name="RatingActivity" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/rating_primary</item>
+        <item name="android:colorPrimaryDark">@color/rating_primary_dark</item>
+        <item name="colorAccent">@color/rating_accent</item>
+    </style>
+
+    <style name="ReviewActivity" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/rating_primary</item>
+        <item name="android:colorPrimaryDark">@color/rating_primary_dark</item>
+        <item name="colorAccent">@color/rating_accent</item>
+    </style>
+
+
+</resources>

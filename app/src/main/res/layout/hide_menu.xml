@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@null"
+        android:src="@drawable/signupin"
+        android:scaleType="fitCenter"
+        android:id="@+id/sign" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@null"
+        android:src="@drawable/profile"
+        android:scaleType="fitCenter"
+        android:id="@+id/profile" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@null"
+        android:src="@drawable/addnewplace"
+        android:scaleType="fitCenter"
+        android:id="@+id/addnew" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:background="@null"
+        android:src="@drawable/about"
+        android:scaleType="fitCenter"
+        android:id="@+id/about" />
+
+</LinearLayout>

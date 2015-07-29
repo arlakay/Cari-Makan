@@ -1,0 +1,109 @@
+<resources>
+
+    <color name="bg">#FF9800</color>
+    <color name="ateal200">#00BFA5</color>
+    <color name="line">#cccccc</color>
+    <color name="line2">#BDBDBD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="whitetint50">#BFffffff</color>
+    <color name="blacktint75">#80000000</color>
+    <color name="btnsimpan">#4DB6AC</color>
+    <color name="bg_title_tint">#40000000</color>
+    <color name="red">#ff0000</color>
+    <color name="transparent">#00ffffff</color>
+
+    <!-- Global Color Xml -->
+    <color name="primary">#30393e</color>
+    <color name="primary_dark">#2a3338</color>
+    <color name="primary_light">#FFE0B2</color>
+    <color name="accent">#00B8D4</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#212121</color>
+    <color name="divider">#B6B6B6</color>
+
+    <!-- Register Xml -->
+    <color name="register_primary">#2c3034</color>
+    <color name="register_primary_dark">#202326</color>
+    <color name="register_primary_light">#FFE0B2</color>
+    <color name="register_accent">#03a9f4</color>
+    <color name="register_primary_text">#ffffff</color>
+    <color name="register_secondary_text">#a1a1a1</color>
+    <color name="register_icons">#212121</color>
+    <color name="register_divider">#B6B6B6</color>
+
+    <!-- Login Xml -->
+    <color name="login_primary">#2c3034</color>
+    <color name="login_primary_dark">#cccccc</color>
+    <color name="login_primary_light">#FFE0B2</color>
+    <color name="login_accent">#03a9f4</color>
+    <color name="login_primary_text">#212121</color>
+    <color name="login_secondary_text">#a1a1a1</color>
+    <color name="login_icons">#212121</color>
+    <color name="login_divider">#B6B6B6</color>
+
+    <!--After Login Xml -->
+    <color name="afterlogin_primary">#ffffff</color>
+    <color name="afterlogin_primary_dark">#cccccc</color>
+    <color name="afterlogin_primary_light">#FFE0B2</color>
+    <color name="afterlogin_accent">#03a9f4</color>
+    <color name="afterlogin_primary_text">#212121</color>
+    <color name="afterlogin_secondary_text">#727272</color>
+    <color name="afterlogin_icons">#212121</color>
+    <color name="afterlogin_divider">#B6B6B6</color>
+
+    <!--HomeScreen Xml -->
+    <color name="homescreen_primary">#30393e</color>
+    <color name="homescreen_primary_dark">#2a3338</color>
+    <color name="homescreen_primary_light">#FFE0B2</color>
+    <color name="homescreen_accent">#ffe325</color>
+    <color name="homescreen_primary_text">#212121</color>
+    <color name="homescreen_secondary_text">#727272</color>
+    <color name="homescreen_icons">#212121</color>
+    <color name="homescreen_divider">#B6B6B6</color>
+    <color name="homescreen_app_text_color">#c39d10</color>
+
+    <!--Restaurant Xml -->
+    <color name="restaurant_primary">#30393e</color>
+    <color name="restaurant_primary_dark">#2a3338</color>
+    <color name="restaurant_primary_light">#FFE0B2</color>
+    <color name="restaurant_accent">#ffe325</color>
+    <color name="restaurant_primary_text">#ffffff</color>
+    <color name="restaurant_secondary_text">#212121</color>
+    <color name="restaurant_icons">#86888e</color>
+    <color name="restaurant_divider">#B6B6B6</color>
+
+    <!-- Detail Restaurant Xml -->
+    <color name="detailrestaurant_primary">#30393e</color>
+    <color name="detailrestaurant_primary_dark">#2a3338</color>
+    <color name="detailrestaurant_primary_light">#FFE0B2</color>
+    <color name="detailrestaurant_accent">#ffe325</color>
+    <color name="detailrestaurant_primary_text">#ffffff</color>
+    <color name="detailrestaurant_secondary_text">#212121</color>
+    <color name="detailrestaurant_icons">#86888e</color>
+    <color name="detailrestaurant_divider">#B6B6B6</color>
+
+    <!-- Rating  Xml -->
+    <color name="rating_primary">#30393e</color>
+    <color name="rating_primary_dark">#2a3338</color>
+    <color name="rating_primary_light">#FFE0B2</color>
+    <color name="rating_accent">#ffe325</color>
+    <color name="rating_primary_text">#ffffff</color>
+    <color name="rating_secondary_text">#212121</color>
+    <color name="rating_icons">#86888e</color>
+    <color name="rating_divider">#B6B6B6</color>
+
+    <!-- AddNewPlace  Xml -->
+    <color name="add_new_place_primary">#30393e</color>
+    <color name="add_new_place_primary_dark">#2a3338</color>
+    <color name="add_new_place_primary_light">#FFE0B2</color>
+    <color name="add_new_place_accent">#ffe325</color>
+    <color name="add_new_place_primary_text">#ffffff</color>
+    <color name="add_new_place_secondary_text">#212121</color>
+    <color name="add_new_place_icons">#86888e</color>
+    <color name="add_new_place_divider">#B6B6B6</color>
+
+
+
+</resources>
