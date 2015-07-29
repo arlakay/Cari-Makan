@@ -2,7 +2,7 @@
 Projects of Restaurant Apps
 
 # ScreenShot
-<img src='http://www.4shared.com/download/VdFS82rzce/Screenshot_2015-07-29-20-27-49.png?lgfp=3000'></img>
+<img src='http://www.4shared.com/download/VdFS82rzce/Screenshot_2015-07-29-20-27-49.png?lgfp=3000' width='400' height='600'></img>
 
 libs used:
 <br>
