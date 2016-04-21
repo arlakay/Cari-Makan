@@ -84,8 +84,8 @@ public class OneFragment extends Fragment implements SearchView.OnQueryTextListe
                 String namaRes = model.getTitle();
                 String alamatRes = model.getAlamat();
                 String detail = model.getDetail();
-                String lat = String.valueOf(model.getLati());
-                String lng = String.valueOf(model.getLongi());
+                double lat = model.getLati();
+                double lng = model.getLongi();
                 String kategori = model.getKategori();
                 String urlPicRes = model.getUrlpic();
                 String menu = model.getMenu();

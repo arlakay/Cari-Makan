@@ -69,6 +69,8 @@ public class DetailRestaurantActivity extends AppCompatActivity {
         lat = i.getDoubleExtra("lat", 0.00000);
         lng = i.getDoubleExtra("lng", 0.00000);
 
+//        Log.d(TAG," koordinatnya coy =" +lat +lng);
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -169,12 +171,15 @@ public class DetailRestaurantActivity extends AppCompatActivity {
 
     private void setUpMap() {
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mMap.getUiSettings().setAllGesturesEnabled(false);
+        mMap.getUiSettings().setAllGesturesEnabled(true);
         mMap.getUiSettings().setMapToolbarEnabled(false);
 
         Intent i = getIntent();
         lat = i.getDoubleExtra("lat", 0.00000);
+//        Log.d(TAG, "latitude =" + lat);
         lng = i.getDoubleExtra("lng", 0.00000);
+//        Log.d(TAG, "latitude =" + lng);
+
         nama = i.getStringExtra("nama");
 
         LatLng resMark = new LatLng(lat,lng);
