@@ -3,6 +3,8 @@ package com.carimakan;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,7 +15,9 @@ import com.carimakan.helper.SessionManager;
 
 import java.util.HashMap;
 
-public class AfterLoginActivity extends Activity {
+public class AfterLoginActivity extends AppCompatActivity {
+
+	private static final String TAG = AfterLoginActivity.class.getSimpleName();
 
 	private TextView txtName;
 	private TextView txtEmail;
@@ -56,12 +60,18 @@ public class AfterLoginActivity extends Activity {
 		// Fetching user details from sqlite
 		HashMap<String, String> user = db.getUserDetails();
 
+		String uid = user.get("uid");
 		String name = user.get("name");
 		String email = user.get("email");
 
 		// Displaying the user details on the screen
 		txtName.setText(name);
 		txtEmail.setText(email);
+
+		// displaying user data
+		Log.d(TAG, "uid: <b>" + uid + "</b>");
+		Log.d(TAG, "Name: <b>" + name + "</b>");
+		Log.d(TAG, "Email: <b>" + email + "</b>");
 
 		// Logout button click event
 		btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -86,4 +96,5 @@ public class AfterLoginActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}
+
 }

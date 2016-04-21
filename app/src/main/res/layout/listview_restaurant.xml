@@ -2,51 +2,39 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/relListRes"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp" >
+	android:layout_height="wrap_content">
 
     <com.android.volley.toolbox.NetworkImageView
    		android:id="@+id/photo"
-        android:layout_marginRight="10dp"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:scaleType="centerCrop"
-        android:layout_margin="5dp"/>
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"/>
+
+    <ImageView android:layout_width="fill_parent"
+        android:layout_height="200dip"
+        android:background="@drawable/transparent_background"
+        android:contentDescription="@string/action_settings"/>
 
 	<TextView
         android:id="@+id/name"
-		android:textStyle="bold"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_toRightOf="@id/photo"
-        android:layout_marginTop="5dp" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#44330b"
+        android:textSize="@dimen/activity_vertical_margin"
+        android:textAllCaps="true"
+        android:paddingLeft="10dip"
+        android:paddingBottom="30dip"
+        android:layout_alignParentBottom="true"/>
 
 	<TextView
-        android:layout_marginTop="5dp"
         android:id="@+id/itemDescription"
-		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content"
-		android:layout_below="@id/name"
-		android:layout_toRightOf="@id/photo" />
-
-    <TextView
-        android:text="Distance:..."
-        android:id="@+id/txtdistance"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/photo"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="ETA:..."
-        android:id="@+id/txteta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtdistance"
-        android:layout_toLeftOf="@+id/txtdistance"
-        android:layout_toStartOf="@+id/txtdistance" />
+        android:textColor="#44330b"
+        android:textSize="@dimen/smalll_text"
+        android:paddingLeft="10dip"
+        android:paddingBottom="13dip"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
 

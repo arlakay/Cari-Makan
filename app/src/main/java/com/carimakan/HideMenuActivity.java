@@ -2,7 +2,8 @@ package com.carimakan;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
@@ -10,7 +11,7 @@ import android.widget.ImageButton;
 /**
  * Created by Ersa Rizki Dimitri on 24/06/2015.
  */
-public class HideMenuActivity extends ActionBarActivity implements View.OnClickListener {
+public class HideMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
 
     @Override
@@ -22,6 +23,7 @@ public class HideMenuActivity extends ActionBarActivity implements View.OnClickL
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ImageButton sign = (ImageButton)findViewById(R.id.sign);
         ImageButton profile = (ImageButton)findViewById(R.id.profile);
@@ -50,6 +52,11 @@ public class HideMenuActivity extends ActionBarActivity implements View.OnClickL
                 startActivity(intent3);
                 break;
             case R.id.about:
+                Intent intent4 = new Intent(HideMenuActivity.this, AboutActivity.class);
+                startActivity(intent4);
+                break;
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
                 break;
             case View.NO_ID:
                 default:

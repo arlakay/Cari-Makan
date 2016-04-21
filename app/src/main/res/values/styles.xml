@@ -1,42 +1,47 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="MyMaterialTheme.Base">
 
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="RegisterLay" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/register_primary_dark</item>
+        <item name="colorAccent">@color/register_accent</item>
+        <item name="android:textColorPrimary">@color/register_accent</item>
+        <item name="android:textColorSecondary">@color/register_primary_text</item>
+        <item name="android:textColorHint">@color/register_primary_text</item>
+    </style>
+
+    <style name="LoginLay" parent="AppTheme">
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/login_primary_dark</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/login_accent</item>
     </style>
 
     <style name="AfterLoginLay" parent="AppTheme">
-    <!-- Customize your theme here. -->
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/afterlogin_primary_dark</item>
+
     </style>
 
-     <style name="LoginLay" parent="AppTheme">
-    <!-- Customize your theme here. -->
+    <style name="toolbar_text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
     </style>
-
-     <style name="RegisterLay" parent="AppTheme">
-    <!-- Customize your theme here. -->
-    </style>
-
-     <style name="RuteLay" parent="AppTheme">
-    <!-- Customize your theme here. -->
-    </style>
-
-     <style name="AddNewPlaceLay" parent="AppTheme">
-    <!-- Customize your theme here. -->
-    </style>
-
-     <style name="DetailResLay" parent="AppTheme">
-    <!-- Customize your theme here. -->
-    </style>
-
-     <style name="HomeScreenLay" parent="AppTheme">
-    <!-- Customize your theme here. -->
-    </style>
-
-     <style name="ResLay" parent="AppTheme">
-         <item name="android:actionBarItemBackground">@drawable/btn_save</item>
-         <item name="actionBarItemBackground">@drawable/btn_save</item>
-    </style>
-
 
 </resources>

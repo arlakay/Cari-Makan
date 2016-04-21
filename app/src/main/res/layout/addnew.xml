@@ -10,41 +10,47 @@
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:visibility="gone"
-        android:background="@color/add_new_place_primary"/>
+        android:layout_height="8dp"
+        android:visibility="gone" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtNama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/nama_resto"
+                android:text="Nama Restoran"
                 android:textColor="@color/white"
                 android:background="@color/add_new_place_primary_dark"
                 android:paddingLeft="17dp"
                 android:paddingBottom="3dp"
-                android:paddingTop="3dp"/>
+                android:paddingTop="3dp"
+                android:visibility="gone"/>
 
-            <EditText
-                android:id="@+id/etNama"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_nama"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtNama"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="13dp"
-                android:inputType="text"
-                android:hint="@string/hint_nama_resto"
-                android:textColor="@color/black" />
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/etNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtNama"
+                    android:inputType="text"
+                    android:hint="@string/hint_nama_resto"
+                    android:textColor="@color/black" />
+
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:id="@+id/txtAlamat"
@@ -57,18 +63,24 @@
                 android:paddingLeft="17dp"
                 android:paddingBottom="3dp"
                 android:paddingTop="3dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
 
-            <EditText
-                android:id="@+id/etAlamat"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_alamat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtAlamat"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="13dp"
-                android:inputType="text"
-                android:hint="@string/hint_alamat"
-                android:textColor="@color/black" />
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/etAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtAlamat"
+                    android:inputType="text"
+                    android:hint="@string/hint_alamat"
+                    android:textColor="@color/black" />
+
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:id="@+id/txtKategori"
@@ -81,49 +93,24 @@
                 android:paddingLeft="17dp"
                 android:paddingBottom="3dp"
                 android:paddingTop="3dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
 
-            <EditText
-                android:id="@+id/etKategori"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_kategori"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtKategori"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="13dp"
-                android:inputType="text"
-                android:hint="@string/hint_kategori"
-                android:textColor="@color/black" />
+                android:layout_height="wrap_content" >
 
-            <View
-                android:id="@+id/line1"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/linAmbilGambar"
-                android:background="@color/line"/>
-            <View
-                android:id="@+id/line2"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/linLocation"
-                android:background="@color/line"/>
-            <View
-                android:id="@+id/line3"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/etKategori"
-                android:background="@color/line"/>
-            <View
-                android:id="@+id/line4"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/etAlamat"
-                android:background="@color/line"/>
-            <View
-                android:id="@+id/line5"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/etNama"
-                android:background="@color/line"/>
+                <EditText
+                    android:id="@+id/etKategori"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtKategori"
+                    android:inputType="text"
+                    android:hint="@string/hint_kategori"
+                    android:textColor="@color/black" />
+
+            </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:id="@+id/btnSave"
@@ -141,6 +128,66 @@
                 android:visibility="gone"/>
 
             <TextView
+                android:id="@+id/txtDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detail Resto"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_below="@+id/etUid"
+                android:visibility="gone"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:id="@+id/etDetail"
+                    android:layout_below="@+id/txtDetail"
+                    android:hint="Detil Resto, alamat, telp, jam-buka, dll"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txtUid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User id"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_below="@+id/linAmbilGambarMenu"
+                android:visibility="gone"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_uid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/etUid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtUid"
+                    android:inputType="none"
+                    android:hint="Auto generated id for active user"
+                    android:textColor="@color/black"
+                    android:editable="false"
+                    android:focusable="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
                 android:id="@+id/curLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,8 +197,7 @@
                 android:paddingLeft="17dp"
                 android:paddingBottom="3dp"
                 android:paddingTop="3dp"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/line3"/>
+                android:layout_marginTop="5dp"/>
 
             <LinearLayout
                 android:id="@+id/linLocation"
@@ -167,16 +213,31 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/lblLocation"
+                        android:id="@+id/lbllat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:paddingLeft="17dp"
+                        android:text="Latitude"
                         android:textSize="16sp"
                         android:textColor="@color/blacktint75"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" , "
+                        android:id="@+id/point"
+                        android:textColor="@color/blacktint75" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Longitude"
+                        android:id="@+id/lbllng"
+                        android:textSize="16sp"
+                        android:textColor="@color/blacktint75" />
 
                 </LinearLayout>
 
@@ -213,7 +274,7 @@
                 android:id="@+id/txtAmbilFoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ambil_foto"
+                android:text="Foto Restoran"
                 android:textColor="@color/white"
                 android:background="@color/add_new_place_primary_dark"
                 android:paddingLeft="17dp"
@@ -291,7 +352,93 @@
 
             </LinearLayout>
 
-        </RelativeLayout>
+            <!--tes-->
+
+            <TextView
+                android:id="@+id/txtAmbilFotoMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Foto Daftar Menu"
+                android:textColor="@color/white"
+                android:background="@color/add_new_place_primary_dark"
+                android:paddingLeft="17dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/linAmbilGambar"/>
+
+            <LinearLayout
+                android:id="@+id/linAmbilGambarMenu"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/txtAmbilFotoMenu"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- To display picture taken -->
+                    <ImageView
+                        android:id="@+id/imgPreviewMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:src="@drawable/ic_photo_grey600_36dp"
+                        android:contentDescription="@string/preview"/>
+
+                    <!-- To preview video recorded -->
+                    <VideoView
+                        android:id="@+id/videoPreviewMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="400dp"
+                        android:visibility="gone"
+                        android:contentDescription="@string/video_preview" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="end|center_vertical"
+                    android:orientation="vertical" >
+
+                    <!-- Capture picture button -->
+                    <Button
+                        android:id="@+id/btnCapturePictureMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/add_new_place_accent"
+                        android:text="@string/take_picture"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingLeft="10dp"/>
+
+                    <!-- Record video button -->
+                    <Button
+                        android:id="@+id/btnRecordVideoMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textRecordVideo"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--ets-->
+
+        </LinearLayout>
 
     </ScrollView>
 

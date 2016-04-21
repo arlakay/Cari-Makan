@@ -2,6 +2,7 @@ package com.carimakan.helper;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,24 +13,25 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.carimakan.R;
 import com.carimakan.app.MyApplication;
+import com.carimakan.util.FontCache;
 
 import java.util.List;
 
-
-/**
- * Created by Ravi on 13/05/15.
- */
 public class SwipeListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<Restaurant> restaurantList;
-    //private String[] bgColors;
+    private Context context;
+    private Typeface fontLemonMilk, fontHabibi;
+
     ImageLoader imageLoader = MyApplication.getInstance().getImageLoader();
 
     public SwipeListAdapter(Activity activity, List<Restaurant> restaurantList) {
         this.activity = activity;
         this.restaurantList = restaurantList;
-        //bgColors = activity.getApplicationContext().getResources().getStringArray(R.array.movie_serial_bg);
+        context       = activity.getApplicationContext();
+        fontLemonMilk = FontCache.get(this.context, "LemonMilk");
+        fontHabibi    = FontCache.get(this.context, "Habibi-Regular");
     }
 
     @Override
@@ -49,7 +51,6 @@ public class SwipeListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         if (inflater == null)
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -63,12 +64,12 @@ public class SwipeListAdapter extends BaseAdapter {
         TextView title = (TextView) convertView.findViewById(R.id.name);
         TextView alamat = (TextView) convertView.findViewById(R.id.itemDescription);
 
+        title.setTypeface(fontLemonMilk);
+        alamat.setTypeface(fontHabibi);
+
         pic.setImageUrl(restaurantList.get(position).urlpic, imageLoader);
         title.setText(restaurantList.get(position).title);
         alamat.setText(restaurantList.get(position).alamat);
-
-        //String color = bgColors[position % bgColors.length];
-        //serial.setBackgroundColor(Color.parseColor(color));
 
         return convertView;
     }

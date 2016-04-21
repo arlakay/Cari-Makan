@@ -10,19 +10,13 @@ import android.util.Log;
 import java.util.HashMap;
 
 public class SQLiteHandler extends SQLiteOpenHelper {
-
 	private static final String TAG = SQLiteHandler.class.getSimpleName();
-
-	// All Static variables
 	// Database Version
 	private static final int DATABASE_VERSION = 1;
-
 	// Database Name
 	private static final String DATABASE_NAME = "android_api";
-
 	// Login table name
 	private static final String TABLE_LOGIN = "login";
-
 	// Login Table Columns names
 	private static final String KEY_ID = "id";
 	private static final String KEY_NAME = "name";

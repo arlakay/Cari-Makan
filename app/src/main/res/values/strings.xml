@@ -1,13 +1,9 @@
 <resources>
     <string name="app_name">Cari Makan</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="btn_restaurant">Restaurant Near Me</string>
-    <string name="btn_help">Help</string>
     <string name="search_hint">Type your search here</string>
-    <string name="google_maps_key">AIzaSyApyDG1Ps8j-Kw3UpCoipCTnHYrK0jWG1E</string>
-    <string name="tambahlokasibaru">Tambah Lokasi Baru</string>
+    <string name="google_maps_key">AIzaSyAwzMdsGhVOJXVmcNLHig26OywOMh-w2x8</string>
     <string name="textRecordVideo">Record a Video</string>
     <string name="take_picture">Ambil Gambar</string>
     <string name="video_preview">Video preview</string>
@@ -16,13 +12,11 @@
     <string name="get_location">Get Location</string>
     <string name="cd">Content Description</string>
     <string name="simpan">Simpan</string>
-    <string name="hint_kategori">Fast Food or Italian Resto</string>
+    <string name="hint_kategori">Kategori Restoran</string>
     <string name="kategori">Kategori Restoran</string>
-    <string name="hint_alamat">Street Name, Postal Code</string>
+    <string name="hint_alamat">Nama Jalan, Nama Daerah</string>
     <string name="alamat">Alamat Restoran</string>
     <string name="hint_nama_resto">Nama Restoran</string>
-    <string name="nama_resto">Nama Restoran</string>
-    <string name="ambil_foto">Ambil Foto</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="hint_name">Full Name</string>
@@ -32,15 +26,35 @@
     <string name="btn_link_to_login">Already registred! Login Me.</string>
     <string name="welcome">Welcome</string>
     <string name="btn_logout">LOGOUT</string>
-    <string name="name">Fullname</string>
     <string name="text_login_with">Log in with:</string>
     <string name="text_or">or</string>
-    <string name="text_password">Password</string>
-    <string name="text_email">Email</string>
-    <string name="text_name">Name</string>
+    <string name="bantuan">Bantuan</string>
 
     <!-- Button text -->
     <string name="btn_logout_from_google">Logout from Google</string>
     <string name="btn_revoke_access">Revoke Access</string>
+    <string name="title_activity_maps_res">Peta Wisata Kuliner</string>
+
+    <string name="err_msg_name">Enter your full name</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="err_msg_password2">Password did not match</string>
+
+    <string name="err_msg_nama">Enter Nama Restoran</string>
+    <string name="err_msg_alamat">Enter Alamat Restoran</string>
+    <string name="err_msg_kategori">Enter Kategori Restoran</string>
+    <string name="err_msg_detail">Enter Detail Restoran</string>
+    <string name="err_msg_uid">Wrong user id</string>
+
+    <string name="nav_item_attachment">Sign In</string>
+    <string name="nav_item_images">Profile</string>
+    <string name="nav_item_location">Add New Location</string>
+    <string name="nav_sub_menu"></string>
+    <string name="nav_sub_menu_item01">Help</string>
+    <string name="nav_sub_menu_item02">About Cari Makan</string>
+    <string name="drawer_header_text">Cari Makan</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="list">List</string>
 
 </resources>

@@ -1,6 +1,5 @@
 package com.carimakan;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -8,8 +7,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -42,7 +47,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LoginActivity extends Activity implements View.OnClickListener,
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener,
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
 	// LogCat tag
 	private static final String TAG = RegisterActivity.class.getSimpleName();
@@ -70,16 +75,21 @@ public class LoginActivity extends Activity implements View.OnClickListener,
     private RelativeLayout relProfile;
     private LinearLayout linFullLogin;
     private Intent intent;
+    private TextInputLayout inputLayoutEmail, inputLayoutPassword;
 
-	@Override
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 
         db = new SQLiteHandler(getApplicationContext());
 
+        inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
+        inputLayoutPassword = (TextInputLayout) findViewById(R.id.input_layout_password);
+
         inputEmail = (EditText) findViewById(R.id.email);
 		inputPassword = (EditText) findViewById(R.id.password);
+
 		btnLogin = (Button) findViewById(R.id.btnLogin);
 		btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
 
@@ -108,6 +118,24 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 
 		// Session manager
 		session = new SessionManager(getApplicationContext());
+        /*
+        session.checkLogin();
+
+        // get user data from session
+        HashMap<String, String> user = session.getUserDetails();
+
+        // name
+        String uid = user.get(SessionManager.KEY_UID);
+        // name
+        String name = user.get(SessionManager.KEY_NAME);
+        // email
+        String email = user.get(SessionManager.KEY_EMAIL);
+
+        // displaying user data
+        Log.d(TAG, "Name: <b>" + name + "</b>");
+        Log.d(TAG, "Email: <b>" + email + "</b>");
+        */
+
 
 		// Check if user is already logged in or not
 		if (session.isLoggedIn()) {
@@ -117,6 +145,9 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 			finish();
 		}
 
+        inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
+        inputPassword.addTextChangedListener(new MyTextWatcher(inputPassword));
+
 		// Login button Click Event
 		btnLogin.setOnClickListener(new View.OnClickListener() {
 
@@ -124,17 +155,20 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 				String email = inputEmail.getText().toString();
 				String password = inputPassword.getText().toString();
 
+                checkLogin(email, password);
+
+                /*
 				// Check for empty data in the form
 				if (email.trim().length() > 0 && password.trim().length() > 0) {
                     // login user
                     checkLogin(email, password);
-
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getApplicationContext(),
                             "Please enter email and password!", Toast.LENGTH_LONG)
                             .show();
                 }
+                */
 			}
 
 		});
@@ -156,29 +190,31 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 	 * function to verify login details in mysql db
 	 * */
 	private void checkLogin(final String email, final String password) {
+        if (!validateEmail()) {
+            return;
+        }
+
+        if (!validatePassword()) {
+            return;
+        }
 		// Tag used to cancel the request
 		String tag_string_req = "req_login";
-
 		pDialog.setMessage("Logging in ...");
 		showDialog();
-
 		StringRequest strReq = new StringRequest(Method.POST,
 				Config.URL_LOGIN, new Response.Listener<String>() {
-
 					@Override
 					public void onResponse(String response) {
 						Log.d(TAG, "Login Response: " + response.toString());
                         hideDialog();
-
                         try {
 							JSONObject jObj = new JSONObject(response);
 							boolean error = jObj.getBoolean("error");
-
 							// Check for error node in json
 							if (!error) {
 								// user successfully logged in
-								// Create login session
-								session.setLogin(true);
+                                // Create login session
+                                session.setLogin(true);
 
                                 // Now store the user in sqlite
                                 String uid = jObj.getString("uid");
@@ -187,6 +223,8 @@ public class LoginActivity extends Activity implements View.OnClickListener,
                                 String name = user.getString("name");
                                 String email = user.getString("email");
                                 String created_at = user.getString("created_at");
+
+
 
                                 // Inserting row in users table
                                 db.addUser(name, email, uid, created_at);
@@ -206,10 +244,8 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 							// JSON error
 							e.printStackTrace();
 						}
-
 					}
 				}, new Response.ErrorListener() {
-
 					@Override
 					public void onErrorResponse(VolleyError error) {
 						Log.e(TAG, "Login Error: " + error.getMessage());
@@ -218,7 +254,6 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 						hideDialog();
 					}
 				}) {
-
 			@Override
 			protected Map<String, String> getParams() {
 				// Posting parameters to login url
@@ -226,10 +261,8 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 				params.put("tag", "login");
 				params.put("email", email);
 				params.put("password", password);
-
 				return params;
 			}
-
 		};
 		// Adding request to request queue
 		MyApplication.getInstance().addToRequestQueue(strReq, tag_string_req);
@@ -244,6 +277,68 @@ public class LoginActivity extends Activity implements View.OnClickListener,
 		if (pDialog.isShowing())
 			pDialog.dismiss();
 	}
+
+    private boolean validateEmail() {
+        String email = inputEmail.getText().toString().trim();
+
+        if (email.isEmpty() || !isValidEmail(email)) {
+            inputLayoutEmail.setError(getString(R.string.err_msg_email));
+            requestFocus(inputEmail);
+            return false;
+        } else {
+            inputLayoutEmail.setErrorEnabled(false);
+        }
+        return true;
+    }
+
+    private boolean validatePassword() {
+        if (inputPassword.getText().toString().trim().isEmpty()) {
+            inputLayoutPassword.setError(getString(R.string.err_msg_password));
+            requestFocus(inputPassword);
+            return false;
+        } else {
+            inputLayoutPassword.setErrorEnabled(false);
+        }
+        return true;
+    }
+
+    private static boolean isValidEmail(String email) {
+        return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void requestFocus(View view) {
+        if (view.requestFocus()) {
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
+    }
+
+    private class MyTextWatcher implements TextWatcher {
+
+        private View view;
+
+        private MyTextWatcher(View view) {
+            this.view = view;
+        }
+
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        public void afterTextChanged(Editable editable) {
+            switch (view.getId()) {
+                case R.id.email:
+                    validateEmail();
+                    break;
+                case R.id.password:
+                    validatePassword();
+                    break;
+            }
+        }
+    }
+
+    //-----------------------------------------------------------------------------------------------
 
     protected void onStart() {
         super.onStart();
@@ -279,11 +374,9 @@ public class LoginActivity extends Activity implements View.OnClickListener,
                     0).show();
             return;
         }
-
         if (!mIntentInProgress) {
             // Store the ConnectionResult for later usage
             mConnectionResult = result;
-
             if (mSignInClicked) {
                 // The user has already clicked 'sign-in' so we attempt to
                 // resolve all
@@ -291,7 +384,6 @@ public class LoginActivity extends Activity implements View.OnClickListener,
                 resolveSignInError();
             }
         }
-
     }
 
     @Override
@@ -301,9 +393,7 @@ public class LoginActivity extends Activity implements View.OnClickListener,
             if (responseCode != RESULT_OK) {
                 mSignInClicked = false;
             }
-
             mIntentInProgress = false;
-
             if (!mGoogleApiClient.isConnecting()) {
                 mGoogleApiClient.connect();
             }
@@ -314,13 +404,10 @@ public class LoginActivity extends Activity implements View.OnClickListener,
     public void onConnected(Bundle arg0) {
         mSignInClicked = false;
         Toast.makeText(this, "User is connected!", Toast.LENGTH_LONG).show();
-
         // Get user's information
         getProfileInformation();
-
         // Update the UI after signin
         updateUI(true);
-
     }
 
     /**
@@ -364,7 +451,6 @@ public class LoginActivity extends Activity implements View.OnClickListener,
                         + PROFILE_PIC_SIZE;
 
                 new LoadProfileImage(imgProfilePic).execute(personPhotoUrl);
-
             } else {
                 Toast.makeText(getApplicationContext(),
                         "Person information is null", Toast.LENGTH_LONG).show();
